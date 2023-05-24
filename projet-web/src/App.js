@@ -25,45 +25,39 @@ function App() {
   };
 
   const handleSubmit = (event) => {
-    //Prevent page reload
+
     event.preventDefault();
 
     var { uname, pass } = document.forms[0];
 
-    // Find user login info
     const userData = database.find((user) => user.username === uname.value);
 
-    // Compare user info
     if (userData) {
       if (userData.password !== pass.value) {
-        // Invalid password
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         setIsSubmitted(true);
       }
     } else {
-      // Username not found
       setErrorMessages({ name: "uname", message: errors.uname });
     }
   };
 
-  // Generate JSX code for error message
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (
       <div className="error">{errorMessages.message}</div>
     );
 
-  // JSX code for login form
   const renderForm = (
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
-          <label>Email </label>
+          <label><b>Email</b></label>
           <input type="text" name="uname" required />
           {renderErrorMessage("uname")}
         </div>
         <div className="input-container">
-          <label>Mot de passe </label>
+          <label><b>Mot de passe</b></label>
           <input type="password" name="pass" required />
           {renderErrorMessage("pass")}
         </div>
@@ -78,11 +72,11 @@ function App() {
     <div className='form'>
       <form onSubmit={handleSubmit}>
         <div className='input-container'>
-          <label>Nom</label>
+          <label><b>Nom</b></label>
           <input type="text" name="noun" required />
-          <label>Prénom</label>
+          <label><b>Prénom</b></label>
           <input type="text" name="name" required />
-          <label>Année scolaire</label>
+          <label><b>Année scolaire</b></label>
           <select>
             <option>E1</option>
             <option>E2</option>
@@ -90,11 +84,11 @@ function App() {
             <option>E4e</option>
             <option>E5e</option>
           </select>
-          <label>Email</label>
+          <label><b>Email</b></label>
           <input type="text" name="email" required />
-          <label>Mot de passe</label>
+          <label><b>Mot de passe</b></label>
           <input type="text" name="mot-de-passe" required />
-          <label>Confirmer mot de passe</label>
+          <label><b>Confirmer mot de passe</b></label>
           <input type="text" name="conf-mdp" required />
           <div className="button-container">
           <input type="submit" value='Inscription'/>
@@ -106,7 +100,7 @@ function App() {
 
   return (
     <body>
-      <h1>Projet Web</h1>
+      <h1>PROJET WEB</h1>
       <div className="app">
         <div className="login-form">
           <div className="title">Connexion</div>
