@@ -114,7 +114,7 @@ function App() {
         </div>
         <div className='register-form'> 
           <div className='title'>Inscription</div>
-          {isSubmitted ? <div>User is successfully logged in</div> : renderFormRegister}
+          {renderFormRegister}
         </div>
       </div>
     </body>
